@@ -17,7 +17,7 @@ $libros = $stmt->fetchAll();
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         <?php foreach ($libros as $libro): ?>
             <div class="col">
-                <div class="card libro-card h-100 border-0 overflow-hidden">
+                <div class="card libro-card h-100 border-0 overflow-hidden <?php echo $libro['precio'] === null ? 'no-disponible' : ''; ?>">
                     <div class="card-header libro-header bg-dark text-white d-flex justify-content-end align-items-center py-2 px-3">
                         <span class="badge bg-secondary rounded-pill"><?php echo htmlspecialchars($libro['tipo']); ?></span>
                     </div>
@@ -30,7 +30,7 @@ $libros = $stmt->fetchAll();
                         <?php endif; ?>
                         <div class="d-flex justify-content-between align-items-center mt-3">
                             <div class="precio-libro fs-3 fw-bold">
-                                <?php echo $libro['precio'] !== null ? '$' . number_format($libro['precio'], 2) : 'N/A'; ?>
+                                <?php echo $libro['precio'] !== null ? '$' . number_format($libro['precio'], 2) : '<span class="texto-no-disponible">No disponible</span>'; ?>
                             </div>
                             <?php if ($libro['contrato'] == '1'): ?>
                                 <span class="badge btn-verde px-3 py-2">Contrato Sí</span>
@@ -43,7 +43,7 @@ $libros = $stmt->fetchAll();
                         <div class="row g-0 text-center small">
                             <div class="col-6 col-md-3 border-end">
                                 <div class="text-muted text-uppercase small fw-semibold">Avance</div>
-                                <div class="fw-bold"><?php echo $libro['avance'] !== null ? number_format($libro['avance'], 2) : 'N/A'; ?></div>
+                                <div class="fw-bold"><?php echo $libro['avance'] !== null ? number_format($libro['avance'], 2) : ''; ?></div>
                                 <div class="progress mt-1 mx-2" style="height: 6px;">
                                     <div class="progress-bar bg-success" role="progressbar" style="width: <?php echo $libro['avance'] !== null ? min(100, ($libro['avance'] / 10000) * 100) : 0; ?>%"></div>
                                 </div>
@@ -51,7 +51,7 @@ $libros = $stmt->fetchAll();
                             </div>
                             <div class="col-6 col-md-3 border-end">
                                 <div class="text-muted text-uppercase small fw-semibold">Ventas</div>
-                                <div class="fw-bold"><?php echo $libro['total_ventas'] !== null ? number_format($libro['total_ventas']) : 'N/A'; ?></div>
+                                <div class="fw-bold"><?php echo $libro['total_ventas'] !== null ? number_format($libro['total_ventas']) : ''; ?></div>
                                 <div class="text-success mt-1">
                                     <i class="bi bi-graph-up-arrow"></i>
                                 </div>

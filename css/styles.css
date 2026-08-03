@@ -68,3 +68,11 @@ footer {
 .xsmall {
     font-size: 0.75rem;
 }
+
+.no-disponible {
+    opacity: 0.6;
+}
+
+.texto-no-disponible {
+    color: #dc3545;
+}
