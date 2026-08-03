@@ -18,8 +18,7 @@ $libros = $stmt->fetchAll();
         <?php foreach ($libros as $libro): ?>
             <div class="col">
                 <div class="card libro-card h-100 border-0 overflow-hidden">
-                    <div class="card-header libro-header bg-dark text-white d-flex justify-content-between align-items-center py-2 px-3">
-                        <span class="fw-bold"><?php echo htmlspecialchars($libro['id_titulo']); ?></span>
+                    <div class="card-header libro-header bg-dark text-white d-flex justify-content-end align-items-center py-2 px-3">
                         <span class="badge bg-secondary rounded-pill"><?php echo htmlspecialchars($libro['tipo']); ?></span>
                     </div>
                     <div class="card-body p-3">
