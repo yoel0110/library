@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 <?php endif; ?>
 
-                <form method="POST" action="contacto.php" novalidate>
+                <form method="POST" action="contacto.php" id="formulario-contacto" novalidate>
                     <div class="mb-3">
                         <label for="nombre" class="form-label fw-semibold">Nombre</label>
                         <input type="text" class="form-control form-control-lg" id="nombre" name="nombre" value="<?php echo isset($nombre) ? htmlspecialchars($nombre) : ''; ?>" required>
