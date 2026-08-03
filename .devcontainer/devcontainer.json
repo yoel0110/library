@@ -3,15 +3,15 @@
   "dockerComposeFile": "docker-compose.yml",
   "service": "web",
   "workspaceFolder": "/var/www/html",
-  "forwardPorts": [8080, 3306, 8081],
+  "forwardPorts": [8080, 3307, 8081],
+  "shutdownAction": "stopCompose",
   "postCreateCommand": "echo 'Dev container listo para desarrollo'",
   "customizations": {
     "vscode": {
       "extensions": [
         "bmewburn.vscode-intelephense-client",
         "xdebug.php-debug",
-        "formulahendry.auto-close-tag",
-        "MS-CEINTL.vscode-language-pack-es"
+        "formulahendry.auto-close-tag"
       ],
       "settings": {
         "php.validate.executablePath": "/usr/local/bin/php"
