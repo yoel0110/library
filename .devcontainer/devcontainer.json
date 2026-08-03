@@ -1,0 +1,22 @@
+{
+  "name": "Libreria Web",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "web",
+  "workspaceFolder": "/var/www/html",
+  "forwardPorts": [8080, 3306, 8081],
+  "postCreateCommand": "echo 'Dev container listo para desarrollo'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "xdebug.php-debug",
+        "formulahendry.auto-close-tag",
+        "MS-CEINTL.vscode-language-pack-es"
+      ],
+      "settings": {
+        "php.validate.executablePath": "/usr/local/bin/php"
+      }
+    }
+  },
+  "remoteUser": "root"
+}
