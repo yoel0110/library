@@ -57,7 +57,7 @@ $libros = $stmt->fetchAll();
                                 </div>
                             </div>
                             <div class="col-6 col-md-3 border-end">
-                                <div class="text-muted text-uppercase small fw-semibold">ID</div>
+                                <div class="text-muted text-uppercase small fw-semibold">Editorial</div>
                                 <div class="fw-bold"><?php echo htmlspecialchars($libro['id_pub']); ?></div>
                             </div>
                             <div class="col-6 col-md-3">
