@@ -1,10 +1,5 @@
--- Script de inicialización de la base de datos
--- Este script se ejecuta automáticamente al crear el contenedor de MySQL
--- Ejecuta después de 01_base_datos.sql
-
 USE dblibreria;
 
--- Crear tabla de contactos
 CREATE TABLE IF NOT EXISTS contacto (
     id INT AUTO_INCREMENT PRIMARY KEY,
     fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
